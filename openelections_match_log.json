@@ -1,0 +1,667 @@
+[
+  {
+    "ctds": "4161",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Alpine Elementary District (4161)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4160",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Concho Elementary District (4160)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4163",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Mcnary Elementary District (4163)",
+    "n_candidates": 1
+  },
+  {
+    "ctds": "4159",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Red Mesa Unified District (4159)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4155",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Round Valley Unified District (4155)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4156",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Sanders Unified District (4156)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4153",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "St Johns Unified District (4153)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4162",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Vernon Elementary District (4162)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4154",
+    "year": 2014,
+    "county": "Apache",
+    "lea_name": "Window Rock Unified District (4154)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4163",
+    "year": 2018,
+    "county": "Apache",
+    "lea_name": "Mcnary Elementary District (4163)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "79226",
+    "year": 2024,
+    "county": "Cochise",
+    "lea_name": "Benson Unified School District (79226)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4172",
+    "year": 2024,
+    "county": "Cochise",
+    "lea_name": "San Simon Unified District (4172)",
+    "n_candidates": 9
+  },
+  {
+    "ctds": "4196",
+    "year": 2014,
+    "county": "Coconino",
+    "lea_name": "Page Unified School District #8  (4196)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4197",
+    "year": 2014,
+    "county": "Coconino",
+    "lea_name": "Tuba City Unified School District #15 (4197)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4192",
+    "year": 2024,
+    "county": "Coconino",
+    "lea_name": "Flagstaff Unified District (4192)",
+    "n_candidates": 8
+  },
+  {
+    "ctds": "4196",
+    "year": 2024,
+    "county": "Coconino",
+    "lea_name": "Page Unified School District #8  (4196)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4208",
+    "year": 2014,
+    "county": "Gila",
+    "lea_name": "Globe Unified District (4208)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4209",
+    "year": 2014,
+    "county": "Gila",
+    "lea_name": "Payson Unified District (4209)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4210",
+    "year": 2014,
+    "county": "Gila",
+    "lea_name": "San Carlos Unified District (4210)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4213",
+    "year": 2014,
+    "county": "Gila",
+    "lea_name": "Young Elementary District (4213)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4219",
+    "year": 2018,
+    "county": "Graham",
+    "lea_name": "Thatcher Unified District (4219)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4221",
+    "year": 2018,
+    "county": "Graham",
+    "lea_name": "Fort Thomas Unified District (4221)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4282",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Cartwright Elementary District (4282)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4238",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Gila Bend Unified District (4238)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4266",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Liberty Elementary District (4266)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4289",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Agua Fria Union High School District (4289)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4272",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Avondale Elementary District (4272)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4268",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Balsz Elementary District (4268)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4284",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Buckeye Union High School District (4284)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4244",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Cave Creek Unified District (4244)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4242",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Chandler Unified District #80 (4242)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4263",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Creighton Elementary District (4263)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4246",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Deer Valley Unified District (4246)",
+    "n_candidates": 8
+  },
+  {
+    "ctds": "4243",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Dysart Unified District (4243)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4247",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Fountain Hills Unified District (4247)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4273",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Fowler Elementary District (4273)",
+    "n_candidates": 2
+  },
+  {
+    "ctds": "4239",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Gilbert Unified District (4239)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4271",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Glendale Elementary District (4271)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4285",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Glendale Union High School District (4285)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4248",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Higley Unified School District (4248)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4259",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Isaac Elementary District (4259)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4267",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Kyrene Elementary District (4267)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4276",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Laveen Elementary District (4276)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4235",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Mesa Unified District (4235)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4251",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Morristown Elementary District (4251)",
+    "n_candidates": 1
+  },
+  {
+    "ctds": "4241",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Paradise Valley Unified District (4241)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4237",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Peoria Unified School District (4237)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4245",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Queen Creek Unified District (4245)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4279",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Roosevelt Elementary District (4279)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4240",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Scottsdale Unified District (4240)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4258",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Tempe School District (4258)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4264",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Tolleson Elementary District (4264)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4288",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Tolleson Union High School District (4288)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4260",
+    "year": 2024,
+    "county": "Maricopa",
+    "lea_name": "Washington Elementary School District (4260)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4371",
+    "year": 2014,
+    "county": "Mohave",
+    "lea_name": "Hackberry School District (4371)",
+    "n_candidates": 2
+  },
+  {
+    "ctds": "79598",
+    "year": 2014,
+    "county": "Mohave",
+    "lea_name": "Kingman Unified School District (79598)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4368",
+    "year": 2014,
+    "county": "Mohave",
+    "lea_name": "Lake Havasu Unified District (4368)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "79598",
+    "year": 2016,
+    "county": "Mohave",
+    "lea_name": "Kingman Unified School District (79598)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4368",
+    "year": 2016,
+    "county": "Mohave",
+    "lea_name": "Lake Havasu Unified District (4368)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4370",
+    "year": 2024,
+    "county": "Mohave",
+    "lea_name": "Colorado City Unified District (4370)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "79598",
+    "year": 2024,
+    "county": "Mohave",
+    "lea_name": "Kingman Unified School District (79598)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4397",
+    "year": 2014,
+    "county": "Navajo",
+    "lea_name": "Blue Ridge Unified School District No. 32 (4397)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4396",
+    "year": 2014,
+    "county": "Navajo",
+    "lea_name": "Kayenta Unified School District #27 (4396)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4393",
+    "year": 2014,
+    "county": "Navajo",
+    "lea_name": "Show Low Unified District  (4393)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4387",
+    "year": 2014,
+    "county": "Navajo",
+    "lea_name": "Winslow Unified District (4387)",
+    "n_candidates": 11
+  },
+  {
+    "ctds": "4396",
+    "year": 2020,
+    "county": "Navajo",
+    "lea_name": "Kayenta Unified School District #27 (4396)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4390",
+    "year": 2020,
+    "county": "Navajo",
+    "lea_name": "Pinon Unified District (4390)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4393",
+    "year": 2020,
+    "county": "Navajo",
+    "lea_name": "Show Low Unified District  (4393)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4387",
+    "year": 2020,
+    "county": "Navajo",
+    "lea_name": "Winslow Unified District (4387)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4396",
+    "year": 2024,
+    "county": "Navajo",
+    "lea_name": "Kayenta Unified School District #27 (4396)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4390",
+    "year": 2024,
+    "county": "Navajo",
+    "lea_name": "Pinon Unified District (4390)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4393",
+    "year": 2024,
+    "county": "Navajo",
+    "lea_name": "Show Low Unified District  (4393)",
+    "n_candidates": 10
+  },
+  {
+    "ctds": "4406",
+    "year": 2014,
+    "county": "Pima",
+    "lea_name": "Amphitheater Unified District (4406)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4411",
+    "year": 2014,
+    "county": "Pima",
+    "lea_name": "Sahuarita Unified District (4411)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4407",
+    "year": 2014,
+    "county": "Pima",
+    "lea_name": "Sunnyside Unified District (4407)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4403",
+    "year": 2014,
+    "county": "Pima",
+    "lea_name": "Tucson Unified District (4403)",
+    "n_candidates": 9
+  },
+  {
+    "ctds": "4413",
+    "year": 2014,
+    "county": "Pima",
+    "lea_name": "Vail Unified District (4413)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4448",
+    "year": 2014,
+    "county": "Pinal",
+    "lea_name": "Eloy Elementary District (4448)",
+    "n_candidates": 2
+  },
+  {
+    "ctds": "4454",
+    "year": 2014,
+    "county": "Pinal",
+    "lea_name": "Santa Cruz Valley Union High School District (4454)",
+    "n_candidates": 2
+  },
+  {
+    "ctds": "4443",
+    "year": 2024,
+    "county": "Pinal",
+    "lea_name": "Apache Junction Unified District (4443)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4453",
+    "year": 2024,
+    "county": "Pinal",
+    "lea_name": "Casa Grande Union High School District (4453)",
+    "n_candidates": 7
+  },
+  {
+    "ctds": "4441",
+    "year": 2024,
+    "county": "Pinal",
+    "lea_name": "Maricopa Unified School District (4441)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4440",
+    "year": 2024,
+    "county": "Pinal",
+    "lea_name": "Superior Unified School District (4440)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4457",
+    "year": 2014,
+    "county": "Santa Cruz",
+    "lea_name": "Nogales Unified District (4457)",
+    "n_candidates": 2
+  },
+  {
+    "ctds": "4458",
+    "year": 2014,
+    "county": "Santa Cruz",
+    "lea_name": "Santa Cruz Valley Unified District (4458)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4461",
+    "year": 2014,
+    "county": "Santa Cruz",
+    "lea_name": "Sonoita Elementary District (4461)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4461",
+    "year": 2024,
+    "county": "Santa Cruz",
+    "lea_name": "Sonoita Elementary District (4461)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4458",
+    "year": 2024,
+    "county": "Santa Cruz",
+    "lea_name": "Santa Cruz Valley Unified District (4458)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4505",
+    "year": 2014,
+    "county": "Yuma",
+    "lea_name": "Gadsden Elementary District (4505)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4500",
+    "year": 2014,
+    "county": "Yuma",
+    "lea_name": "Somerton Elementary District (4500)",
+    "n_candidates": 6
+  },
+  {
+    "ctds": "4499",
+    "year": 2014,
+    "county": "Yuma",
+    "lea_name": "Yuma Elementary District (4499)",
+    "n_candidates": 4
+  },
+  {
+    "ctds": "4507",
+    "year": 2014,
+    "county": "Yuma",
+    "lea_name": "Yuma Union High School District (4507)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4507",
+    "year": 2018,
+    "county": "Yuma",
+    "lea_name": "Yuma Union High School District (4507)",
+    "n_candidates": 3
+  },
+  {
+    "ctds": "4500",
+    "year": 2024,
+    "county": "Yuma",
+    "lea_name": "Somerton Elementary District (4500)",
+    "n_candidates": 5
+  },
+  {
+    "ctds": "4507",
+    "year": 2024,
+    "county": "Yuma",
+    "lea_name": "Yuma Union High School District (4507)",
+    "n_candidates": 9
+  }
+]

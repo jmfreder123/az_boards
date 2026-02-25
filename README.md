@@ -201,6 +201,8 @@ Arizona has 223 open regular public school districts (CCD LEA Type 1) plus 10 ac
 
 These districts had no school board election results captured in the original source data across any of the 6 election cycles (2014-2024). Many are small rural districts with one or two schools, though some mid-size districts are also absent.
 
+**Recoverable from OpenElections:** An audit of the [OpenElections Arizona data](https://github.com/openelections/openelections-data-az) county-level precinct files (2014-2024) found governing board races for at least **27** of these 75 districts. The largest coverage gap is **Yavapai County**, where Prescott, Chino Valley, Camp Verde, Mayer, Congress, Canon, Kirkland, and Clarkdale-Jerome all have board races in OpenElections but were not in the original source workbook. Other recoverable districts include Chinle (Apache), Williams/Grand Canyon/Fredonia-Moccasin/Ash Fork (Coconino), Miami (Gila), Blue Elementary (Greenlee), Quartzsite/Bouse/Salome/Bicentennial (La Paz), Colorado River Union HS (Mohave), Snowflake (Navajo), Mohawk Valley (Yuma), Solomon (Graham), and Antelope Union HS (Yuma). Several additional districts may be recoverable from generic "Board Member" entries in 2020 and 2024 county files that require precinct-level matching to identify the district.
+
 | CTDS ID | District Name | Schools |
 |---------|---------------|---------|
 | 4249 | Aguila Elementary District | 2 |

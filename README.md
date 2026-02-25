@@ -11,16 +11,16 @@ This repository links Arizona school board election results (2014-2024) with dis
 | `az_school_board_master.csv` | 2,523 | Candidate | Every candidate in every school board election, with accountability and superintendent data broadcast-joined by district-year |
 | `az_district_year_summary.csv` | 299 | District-Year | One row per district per election year, with derived analytical variables for competitiveness, voter engagement, and accountability |
 
-### Source Files
+### Source Files (`source_data/`)
 
-| File | Description |
+| Path | Description |
 |------|-------------|
-| `School Board Data_2025-2026 (1).xlsx` | Hand-collected superintendent data (48 of ~208 districts filled so far) |
-| `ccd_lea_029_2425_w_1a_073025.csv` | NCES Common Core of Data, Arizona LEAs, 2024-2025 — used as the CTDS-to-NCES crosswalk |
-| `ccd_lea_029_2425_w_1a_073025.sas7bdat` | Same CCD data in SAS format |
-| `ccd_lea_029_2425_w_1a_073025 (1).zip` | Compressed CCD archive |
-| `arizona_school_board_elections_summary.numbers` | Original Apple Numbers workbook (election results) |
-| `arizona_school_board_enhanced 3.numbers` | Enhanced Apple Numbers workbook |
+| `source_data/elections/arizona_school_board_elections_summary.numbers` | Original Apple Numbers workbook (election results) |
+| `source_data/elections/arizona_school_board_enhanced 3.numbers` | Enhanced Apple Numbers workbook |
+| `source_data/ccd/ccd_lea_029_2425_w_1a_073025.csv` | NCES Common Core of Data, Arizona LEAs, 2024-2025 — used as the CTDS-to-NCES crosswalk |
+| `source_data/ccd/ccd_lea_029_2425_w_1a_073025.sas7bdat` | Same CCD data in SAS format |
+| `source_data/ccd/ccd_lea_029_2425_w_1a_073025 (1).zip` | Compressed CCD archive |
+| `source_data/superintendent/School Board Data_2025-2026 (1).xlsx` | Hand-collected superintendent data (48 of ~208 districts filled so far) |
 
 ## Data Sources
 

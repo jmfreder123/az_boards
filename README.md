@@ -41,34 +41,58 @@ This repository links Arizona school board election results (2014-2024) with dis
 
 The join key between election data and ADE accountability data is `ctds_id` + `year`.
 
-## Coverage Notes
+## Data Summary
 
-- **138 of 223 open regular school districts** (62%) in Arizona appear in the election data, based on cross-referencing with the NCES CCD 2024-2025 LEA file
-- **388 unique district-year observations** across 135 districts in the summary file (6 election cycles: 2014, 2016, 2018, 2020, 2022, 2024). Of 810 possible district-years, 422 (52%) are missing — many because not all districts hold board elections every cycle
-- **8 districts** have complete 6-year coverage: Mesa, Peoria, Scottsdale, Dysart, Cave Creek, Queen Creek, Deer Valley, and Kyrene
-- The summary file filters to **clean governing board races only** (excludes bonds, budget overrides, county superintendent races, and rows without a `ctds_id`)
-- **A-F grades** have structural gaps in 2016 and 2020 (ADE did not publish grades those years)
-- **Graduation rates** are only available for districts with high schools (~50% of districts)
-- **Superintendent data** currently covers 48 districts; historical data back to 2013 is in progress
+### Election Data
+
+The dataset contains **2,984 candidate-level records** across **6 general election cycles** (2014, 2016, 2018, 2020, 2022, 2024), covering **138 regular school districts** in **15 of Arizona's 15 counties**. The summary file aggregates these into **394 district-year observations** across 135 districts (after filtering out bonds, budget overrides, county superintendent races, and rows without a `ctds_id`).
+
+| Year | Districts | Candidate Rows |
+|------|-----------|----------------|
+| 2014 | 69 | 365 |
+| 2016 | 86 | 674 |
+| 2018 | 76 | 407 |
+| 2020 | 51 | 378 |
+| 2022 | 35 | 227 |
+| 2024 | 77 | 933 |
+
+**Geographic breakdown:** Maricopa County dominates (1,410 rows, 54 districts), followed by Pima (217 rows, 14 districts), Apache (173 rows, 11 districts), Navajo (168 rows, 8 districts), Pinal (161 rows, 11 districts), Coconino (156 rows, 5 districts), and Gila (149 rows, 9 districts). The remaining 8 counties contribute 10-111 rows each.
+
+**District sizes** range from tiny single-school rural districts to the state's largest: Mesa (130K enrollment), Tucson (97K), Gilbert (76K), Peoria (74K), and Deer Valley (70K). Of the 137 districts with enrollment data, 8 exceed 50,000 students, 36 are between 10K-50K, 48 are 2K-10K, 22 are 500-2K, and 23 are under 500.
+
+### Competitiveness
+
+Across 394 district-year races in the summary, **286 (73%) were contested** (more candidates than seats). Competitiveness varies substantially by year — 2016 (95%), 2018 (92%), and 2022 (97%) had the highest contested rates, while 2014 (45%) and 2024 (36%) had lower rates (partly because the contested field could not be determined for many OpenElections-sourced races where seat counts are unavailable).
+
+Average candidates per seat is **3.8** overall, ranging from 2.7 (2014) to 4.9 (2020). The median winner margin across contested races is **3.0%**.
+
+### Party Affiliation
+
+Party data is available for **1,200 of 2,984 rows** (40%). Among those, the majority are nonpartisan (808 NON + 105 NP), with 114 Republican, 102 Democrat, 15 Libertarian, 14 Green, and a handful of other affiliations. Most school board races in Arizona are officially nonpartisan.
+
+### Accountability Metrics
+
+Each election record is linked (where available) to the district's ADE accountability data for the corresponding year:
+
+| Metric | Coverage | Notes |
+|--------|----------|-------|
+| **A-F letter grade** | 167/394 (42%) | ADE did not publish grades in 2016 or 2020 (COVID moratorium). Distribution: A=47, B=62, C=51, D=5, F=2 |
+| **Total enrollment** | 299/394 (76%) | October 1 counts from ADE |
+| **Dropout rate** | 273/394 (69%) | ADE reports, filtered to Subgroup = "All" |
+| **4-year graduation rate** | 178/394 (45%) | Only available for districts with high schools (~50% of districts) |
+| **Superintendent** | 51/394 (13%) | Hand-collected, 2025-2026 snapshot; historical data in progress |
+
+### Temporal Coverage
+
+**8 districts** have data in all 6 election cycles: Mesa, Peoria, Scottsdale, Dysart, Cave Creek, Queen Creek, Deer Valley, and Kyrene. An additional 15 districts have 5 years, 23 have 4 years, 26 have 3 years, 32 have 2 years, and 31 appear in only 1 cycle. In total, 104 of 135 summary districts (77%) appear in 2 or more cycles.
 
 ### OpenElections Gap-Fill (2025)
 
-95 district-year gaps were filled by ingesting county-level precinct data from the [OpenElections Arizona repository](https://github.com/openelections/openelections-data-az), adding 461 new candidate rows to the master file. The largest gains were in **2024** (+49 district-years from Maricopa, Pima, and other county files) and **2014** (+36 district-years). Coverage by year:
-
-| Year | Districts (before) | Districts (after) | Added |
-|------|-------------------|-------------------|-------|
-| 2014 | 33 | 69 | +36 |
-| 2016 | 84 | 86 | +2 |
-| 2018 | 72 | 76 | +4 |
-| 2020 | 47 | 51 | +4 |
-| 2022 | 35 | 35 | +0 |
-| 2024 | 28 | 77 | +49 |
-
-Pre-ingestion backups are preserved as `az_school_board_master_pre_openelections.csv` and `az_district_year_summary_pre_openelections.csv`. The ingestion script is `ingest_openelections.py`.
+95 district-year gaps were filled by ingesting county-level precinct data from the [OpenElections Arizona repository](https://github.com/openelections/openelections-data-az), adding 461 new candidate rows. The largest gains were in **2024** (+49 district-years) and **2014** (+36 district-years). Pre-ingestion backups are preserved as `az_school_board_master_pre_openelections.csv` and `az_district_year_summary_pre_openelections.csv`. The ingestion script is `ingest_openelections.py`.
 
 ## District Coverage Detail
 
-Arizona has 223 open regular public school districts (CCD LEA Type 1) plus 10 accommodation/regional/special-services districts and 14 specialized vocational-technical districts. The election dataset covers **138 regular districts** (62%). The 85 districts absent from the election data tend to be smaller rural districts, though several mid-size districts (e.g., Casa Grande Elementary, Prescott, J O Combs, Chinle, Snowflake) are also missing.
+Arizona has 223 open regular public school districts (CCD LEA Type 1), plus 10 accommodation/regional/special-services districts and 14 specialized vocational-technical districts. The election dataset covers **138 of the 223 regular districts** (62%), spanning all 15 counties.
 
 ### Districts Included in Election Data (138)
 
@@ -213,11 +237,9 @@ Arizona has 223 open regular public school districts (CCD LEA Type 1) plus 10 ac
 | 4499 | Yuma Elementary District |
 | 4507 | Yuma Union High School District |
 
-### Regular Districts Not in Election Data (75)
+### Regular Districts Not Yet in Election Data (75)
 
-These districts had no school board election results captured across any of the 6 election cycles (2014-2024), even after the OpenElections gap-fill. Many are small rural districts with one or two schools, though some mid-size districts are also absent.
-
-**Potentially recoverable:** An earlier audit of the [OpenElections Arizona data](https://github.com/openelections/openelections-data-az) identified governing board races for up to **27** of these 75 districts. The 2025 OpenElections ingestion focused on filling year-gaps for the 138 districts already in the dataset (adding 95 district-years). Recovering these 75 missing districts would require additional work — particularly for **Yavapai County** (Prescott, Chino Valley, Camp Verde, Mayer, and others) and districts whose races appear under generic "Board Member" labels in 2020 and 2024 county files that need precinct-level matching.
+The remaining 75 regular districts are not yet in the dataset. Most are small rural districts, though some mid-size districts (e.g., Casa Grande Elementary, Prescott, J O Combs, Chinle, Snowflake) are also absent. An audit of [OpenElections Arizona](https://github.com/openelections/openelections-data-az) found governing board races for up to 27 of these districts — particularly in Yavapai County — that could be added in a future ingestion pass.
 
 | CTDS ID | District Name | Schools |
 |---------|---------------|---------|

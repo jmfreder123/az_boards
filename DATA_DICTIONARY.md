@@ -2,7 +2,7 @@
 
 ## az_school_board_master.csv
 
-One row per candidate per election. 2,523 rows.
+One row per candidate per election. 2,984 rows.
 
 ### Election Fields
 
@@ -70,7 +70,7 @@ Joined from hand-collected 2025-2026 superintendent data on `ctds_id`. These are
 
 ## az_district_year_summary.csv
 
-One row per district per election year. 299 rows. Filtered to clean governing board races only (excludes bonds, overrides, county superintendent, and rows without `ctds_id`).
+One row per district per election year. 394 rows. Filtered to clean governing board races only (excludes bonds, overrides, county superintendent, and rows without `ctds_id`).
 
 ### Identifier Fields
 

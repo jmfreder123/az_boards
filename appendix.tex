@@ -1,0 +1,318 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Arizona School Board Elections Data Appendix}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\title{\textbf{Arizona School Board Elections \&\\Accountability Data}\\[0.5em]\Large Appendix: Data Description and Preliminary\\Descriptive Statistics}
+\author{}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+% ──────────────────────────────────────────────
+\section{Introduction}
+
+This appendix describes the construction, contents, and preliminary descriptive statistics for a dataset linking Arizona school board election results (2014--2024) with district-level accountability metrics from the Arizona Department of Education (ADE). The dataset covers six general election cycles and 138 of Arizona's 223 regular public school districts.
+
+The two analysis-ready files are:
+
+\begin{itemize}[nosep]
+    \item \textbf{Master file} (\texttt{az\_school\_board\_master.csv}): 2,984 candidate-level records with 36 variables, including vote totals, party affiliation, and district accountability data.
+    \item \textbf{Summary file} (\texttt{az\_district\_year\_summary.csv}): 394 district-year observations with 33 variables, including competitiveness measures, voter turnout, and aggregated accountability metrics.
+\end{itemize}
+
+% ──────────────────────────────────────────────
+\section{Data Construction}
+
+\subsection{Election Results}
+
+The primary election data were collected from Arizona county election offices for general elections in 2014, 2016, 2018, 2020, 2022, and 2024. These records were manually compiled from official canvass reports into an Apple Numbers workbook, then exported to CSV.
+
+In a supplemental data collection pass, 461 additional candidate records (covering 95 district-year gaps) were ingested from the \href{https://github.com/openelections/openelections-data-az}{OpenElections Arizona} repository, which provides county-level precinct results in machine-readable CSV format. This ingestion targeted districts already in the dataset that were missing coverage in specific election years. The largest gains were in 2024 (+49 district-years from Maricopa, Pima, and other county files) and 2014 (+36 district-years). A Python pipeline (\texttt{ingest\_openelections.py}) automated the download, format detection, race identification, and district-name-to-CTDS matching.
+
+\subsection{District Identifiers}
+
+Each district is identified by its ADE County-Type-District-School (CTDS) Entity ID and cross-referenced with the NCES Common Core of Data (CCD) 2024--2025 Local Education Agency (LEA) file to obtain national NCES LEA IDs. The CTDS ID serves as the primary join key between election data and ADE accountability files.
+
+\subsection{Accountability Metrics}
+
+Five categories of ADE accountability data were merged onto the election records by CTDS ID and year:
+
+\begin{itemize}[nosep]
+    \item \textbf{A--F letter grades}: ADE A--F Accountability files (FY2013--14 through FY2024--25). Grades were not published in FY2015--16 or FY2020--21 due to a COVID-era moratorium.
+    \item \textbf{Total enrollment}: ADE October 1 Enrollment counts (FY2014--2026).
+    \item \textbf{Dropout rates}: ADE Dropout Rate reports (FY2013--2025), filtered to Subgroup = ``All.''
+    \item \textbf{4-year graduation rates}: ADE Cohort Graduation Rates (Cohort 2013--2025), filtered to Subgroup = ``All.'' Only available for districts operating high schools ($\sim$50\% of districts).
+    \item \textbf{Superintendent data}: Hand-collected from district websites, press releases, and LinkedIn (2025--2026 snapshot, in progress).
+\end{itemize}
+
+\subsection{Summary File Construction}
+
+The summary file aggregates candidate-level records to one row per district per election year, computing derived analytical variables including number of candidates, number of seats, candidates-per-seat ratio, whether the race was contested, total votes cast, winner margin, and winner names. The summary excludes bond and budget override questions, county superintendent races, and rows without a CTDS ID.
+
+% ──────────────────────────────────────────────
+\section{Descriptive Statistics}
+
+\subsection{Coverage by Election Cycle}
+
+The dataset spans six biennial election cycles. Table~\ref{tab:coverage} reports the number of districts and candidate records in each cycle.
+
+\begin{table}[h]
+\centering
+\caption{Election data coverage by cycle}
+\label{tab:coverage}
+\begin{tabular}{lrrr}
+\toprule
+Year & District-Year Races & Candidate Records & Avg.\ Candidates/Race \\
+\midrule
+2014 & 69 & 365 & 5.3 \\
+2016 & 86 & 674 & 7.8 \\
+2018 & 76 & 407 & 5.4 \\
+2020 & 51 & 378 & 7.4 \\
+2022 & 35 & 227 & 6.5 \\
+2024 & 77 & 933 & 12.1 \\
+\midrule
+\textbf{Total} & \textbf{394} & \textbf{2,984} & \textbf{7.6} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:by_year} visualizes the year-to-year variation. The 2024 cycle has the most candidate records due to comprehensive OpenElections coverage of Maricopa County precinct data.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig1_districts_candidates_by_year.pdf}
+\caption{Number of district-year races and candidates by election cycle.}
+\label{fig:by_year}
+\end{figure}
+
+\subsection{Geographic Distribution}
+
+The 138 districts span all 15 Arizona counties. Maricopa County accounts for the largest share of the data (1,410 candidate records across 54 districts), reflecting its position as the state's most populous county. Figure~\ref{fig:county} shows the distribution of candidate records across counties.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig8_county_breakdown.pdf}
+\caption{Candidate records by county.}
+\label{fig:county}
+\end{figure}
+
+\subsection{District Size}
+
+District enrollment ranges from fewer than 100 students to over 130,000. Table~\ref{tab:size} shows the size distribution of districts in the dataset. The five largest districts by enrollment are Mesa Unified (130,096), Tucson Unified (96,620), Gilbert Unified (75,865), Peoria Unified (74,323), and Deer Valley Unified (69,630).
+
+\begin{table}[h]
+\centering
+\caption{District size distribution (peak enrollment across years)}
+\label{tab:size}
+\begin{tabular}{lr}
+\toprule
+Enrollment Range & Districts \\
+\midrule
+Under 500 & 23 \\
+500--2,000 & 22 \\
+2,000--10,000 & 48 \\
+10,000--50,000 & 36 \\
+Over 50,000 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:enrollment} shows the full enrollment distribution, which is strongly right-skewed (median = 5,731; mean = 12,762).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig5_enrollment_dist.pdf}
+\caption{Distribution of district enrollment across all district-year observations.}
+\label{fig:enrollment}
+\end{figure}
+
+\subsection{Competitiveness}
+
+Of the 394 district-year races in the summary file, 286 (73\%) were contested---meaning more candidates ran than seats were available. Competitiveness varies by year (Figure~\ref{fig:contested}): 2016 (95\%), 2018 (92\%), and 2022 (97\%) had the highest contested rates, while 2014 (45\%) and 2024 (36\%) had lower rates. The lower rates in 2014 and 2024 are partly an artifact of the OpenElections-sourced records, for which seat counts were often unavailable, making it impossible to determine whether a race was contested.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig2_contested_by_year.pdf}
+\caption{Number of contested, uncontested, and unknown races by election cycle.}
+\label{fig:contested}
+\end{figure}
+
+The average number of candidates per seat is 3.8 across all races with seat data, ranging from 2.7 in 2014 to 4.9 in 2020. Figure~\ref{fig:cps} shows the distribution.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig3_candidates_per_seat.pdf}
+\caption{Distribution of candidates per seat across district-year races.}
+\label{fig:cps}
+\end{figure}
+
+\subsection{Winner Margins}
+
+Among contested races with margin data, the median winner margin is 3.0\% and the mean is 8.3\%, indicating that most races are relatively close. Figure~\ref{fig:margin} shows that the distribution is heavily right-skewed, with a long tail of blowout races.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig4_winner_margin.pdf}
+\caption{Distribution of winner margins in contested races (\(\leq\)50\%).}
+\label{fig:margin}
+\end{figure}
+
+\subsection{Voter Turnout and District Size}
+
+Figure~\ref{fig:votes_enroll} plots total votes cast against district enrollment. As expected, larger districts attract more total votes, though the relationship is not strictly proportional---some large districts have relatively lower turnout, and some small districts have surprisingly high participation.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{appendix_figures/fig7_votes_vs_enrollment.pdf}
+\caption{Total votes cast vs.\ district enrollment.}
+\label{fig:votes_enroll}
+\end{figure}
+
+\subsection{Party Affiliation}
+
+Party data is available for 1,200 of 2,984 candidate records (40\%). Most Arizona school board races are officially nonpartisan. Among rows with party data:
+
+\begin{table}[h]
+\centering
+\caption{Party affiliation of candidates (where reported)}
+\label{tab:party}
+\begin{tabular}{lr}
+\toprule
+Party & Candidates \\
+\midrule
+Nonpartisan (NON/NP) & 913 \\
+Republican (REP) & 114 \\
+Democrat (DEM) & 102 \\
+Nonpartisan Undeclared (NONU) & 37 \\
+Libertarian (LBT/LIB) & 18 \\
+Green (GRN) & 14 \\
+Independent (IND) & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ADE Accountability Metrics}
+
+Table~\ref{tab:accountability} reports the availability of each accountability metric across the 394 district-year observations.
+
+\begin{table}[h]
+\centering
+\caption{Accountability metric coverage}
+\label{tab:accountability}
+\begin{tabular}{lrrl}
+\toprule
+Metric & Available & Rate & Notes \\
+\midrule
+A--F letter grade & 167 & 42\% & Not published in 2016 or 2020 \\
+Total enrollment & 299 & 76\% & \\
+Dropout rate & 273 & 69\% & \\
+4-year graduation rate & 178 & 45\% & Only districts with high schools \\
+Superintendent & 51 & 13\% & Data collection in progress \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Among the 167 district-year observations with letter grades, the distribution skews toward the higher end: 47 received an A, 62 a B, 51 a C, 5 a D, and 2 an F (Figure~\ref{fig:grades}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{appendix_figures/fig6_letter_grades.pdf}
+\caption{Distribution of ADE A--F letter grades.}
+\label{fig:grades}
+\end{figure}
+
+\subsection{Temporal Coverage}
+
+Eight districts have data in all six election cycles: Mesa, Peoria, Scottsdale, Dysart, Cave Creek, Queen Creek, Deer Valley, and Kyrene. Table~\ref{tab:temporal} shows the full distribution of year coverage across the 135 districts in the summary file.
+
+\begin{table}[h]
+\centering
+\caption{Number of election cycles per district}
+\label{tab:temporal}
+\begin{tabular}{lrr}
+\toprule
+Cycles Present & Districts & Cumulative \% \\
+\midrule
+6 (all years) & 8 & 6\% \\
+5 & 15 & 17\% \\
+4 & 23 & 34\% \\
+3 & 26 & 53\% \\
+2 & 32 & 77\% \\
+1 & 31 & 100\% \\
+\midrule
+\textbf{Total} & \textbf{135} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In total, 104 of 135 districts (77\%) appear in two or more election cycles, providing repeated observations for panel analysis.
+
+% ──────────────────────────────────────────────
+\section{Limitations and Known Issues}
+
+\begin{enumerate}[nosep]
+    \item \textbf{Incomplete district coverage.} 85 of Arizona's 223 regular school districts are not yet in the dataset. Most are small rural districts, but several mid-size districts (e.g., Casa Grande Elementary, Prescott, Chinle, Snowflake) are also absent.
+
+    \item \textbf{Unbalanced panel.} Only 8 of 135 summary districts appear in all 6 cycles. The missing district-years are a mix of genuinely uncontested/off-cycle elections and data collection gaps.
+
+    \item \textbf{Seat counts for OpenElections records.} Races added from OpenElections precinct data often lack seat count information, making it impossible to determine whether the race was contested and to calculate candidates-per-seat ratios. This affects primarily the 2014 and 2024 additions.
+
+    \item \textbf{Winner identification.} The \texttt{winner} field is populated for only 587 of 2,984 candidate records (20\%). This limits analysis of incumbent effects and winner characteristics.
+
+    \item \textbf{A--F grade gaps.} ADE did not publish school or district letter grades in FY2015--16 or FY2020--21, creating structural missingness in the 2016 and 2020 election cycles.
+
+    \item \textbf{Superintendent data.} Currently covers only 51 district-year observations (13\%). Historical superintendent data back to 2013 is being collected.
+
+    \item \textbf{Party affiliation.} Available for 40\% of records. Most Arizona school board races are officially nonpartisan, so the party field reflects candidate filing data where reported by county election offices.
+\end{enumerate}
+
+% ──────────────────────────────────────────────
+\section{Data Dictionary Reference}
+
+Full column definitions for both the master and summary files are provided in \texttt{DATA\_DICTIONARY.md} in the repository. Key variables include:
+
+\begin{itemize}[nosep]
+    \item \texttt{ctds\_id} --- ADE CTDS Entity ID (primary district identifier)
+    \item \texttt{nces\_leaid} --- NCES national LEA identifier
+    \item \texttt{year}, \texttt{election\_date}, \texttt{election\_type}
+    \item \texttt{candidate}, \texttt{party}, \texttt{total\_votes}, \texttt{winner}
+    \item \texttt{contested}, \texttt{candidates\_per\_seat}, \texttt{winner\_margin\_pct}
+    \item \texttt{lea\_letter\_grade}, \texttt{total\_enrollment}, \texttt{dropout\_rate}, \texttt{grad\_rate\_4yr}
+\end{itemize}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}
+\small
+\noindent Repository: \url{https://github.com/jmfreder123/az_boards}\\
+Data files, source data, and ingestion scripts are all included in the repository.
+
+\end{document}

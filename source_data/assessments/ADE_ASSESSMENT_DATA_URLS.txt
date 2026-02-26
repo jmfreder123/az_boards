@@ -1,0 +1,172 @@
+Arizona Department of Education (ADE) Assessment Data - URL Reference
+=====================================================================
+Generated: 2026-02-26
+
+OVERVIEW
+--------
+The ADE publishes district-level ELA and Math proficiency data through
+two main pages. The data includes percentage of students at each
+performance level (Minimally Proficient, Partially Proficient, Proficient,
+Highly Proficient) broken down by school, LEA (district), county, and state.
+
+Assessment naming history:
+  2015-2019: AzMERIT (Arizona's Measurement of Educational Readiness to Inform Teaching)
+  2019-2020: AzM2 (renamed AzMERIT, same test)
+  2020-2021: No statewide testing (COVID-19 waiver)
+  2021-2022+: AASA (Arizona's Academic Standards Assessment, same standards/cut scores)
+
+PRIVACY NOTE: Asterisks (*) indicate groups with <11 students (FERPA suppression).
+
+
+=====================================================================
+PAGE 1: ACCOUNTABILITY & RESEARCH DATA (2021-2025 AASA data)
+URL: https://www.azed.gov/accountability-research/data
+=====================================================================
+
+Known files on this page (titles and update dates confirmed via search):
+  - Assessments 2025 (Updated 10/10/25)
+  - Assessments 2024 (Updated 9/23/2024)
+  - Assessments 2023 (Updated 10/06/2023)
+  - Assessments 2022 (Updated 10/16/2023)
+  - Assessments 2021 (Updated 2/1/2023)
+
+File format: Excel (.xlsx) with tabs for:
+  - By School
+  - By LEA (District/Charter Holder)
+  - By County
+  - By State Level (by school type)
+
+Also on this page:
+  - EL Assessment data (AZELLA, Alt ELPA) for multiple years
+  - Graduation rate data
+  - Dropout rate data
+  - Enrollment data
+
+Contact: Achieve@azed.gov / (602) 542-5151
+
+
+=====================================================================
+PAGE 2: STATE ASSESSMENT RESULTS (2015-2019 AzMERIT data)
+URL: https://www.azed.gov/accountability-research/state-assessment-results
+=====================================================================
+
+Known files on this page:
+  - AzMERIT, MSAA, ACT, and SAT 2019 (Updated 01/23/2020)
+  - AzMERIT 2018
+  - AzMERIT 2017
+  - AzMERIT 2016 (includes Fall 2015 + Spring 2016)
+
+These Excel files have tabs for:
+  - By school
+  - By school and grade
+  - By LEA and grade
+  - By county and grade
+  - At the state level by grade
+
+Confirmed direct download URL:
+  https://www.azed.gov/sites/default/files/2017/06/2016-azmerit.xlsx
+
+
+=====================================================================
+PAGE 3: AZ SCHOOL REPORT CARDS - STATE REPORTS
+URL: https://azreportcards.azed.gov/state-reports
+=====================================================================
+
+This page has downloadable reports with assessment results.
+Documents have tabs for: By School, By LEA, and at the State Level.
+
+Confirmed file URL:
+  https://azreportcards.azed.gov/Files/Civics_Assessment_Results_2024.xlsx
+
+
+=====================================================================
+PAGE 4: PUBLIC DATA SETS
+URL: https://www.azed.gov/data/public-data-sets
+=====================================================================
+
+Master list of all public ADE datasets, including:
+  - Arizona School Report Cards data
+  - Accountability & Research Data (assessment results)
+  - Student enrollment data
+
+
+=====================================================================
+PAGE 5: AASA DISTRICT DATA FILES (requires ADEConnect for student-level)
+=====================================================================
+
+These pages provide district-specific student data files:
+  - https://www.azed.gov/assessment/aasa-district-data-file-spring-2024
+  - https://www.azed.gov/assessment/aasa-district-data-file-spring-2023
+
+Layout file (confirmed URL):
+  https://www.azed.gov/sites/default/files/2024/03/AZ%20SP24%20AASA%20Gr3-8%20District%20SDF%20Layout.xlsx
+
+
+=====================================================================
+OTHER CONFIRMED XLSX FILE URLS
+=====================================================================
+
+AZELLA 2023 (English Learner Assessment):
+  https://azed.gov/sites/default/files/2024/01/Azella_2023_publish[1].xlsx
+
+2024 IDEA GAN data:
+  https://www.azed.gov/sites/default/files/2024/03/2024IDEAGAN.xlsx
+
+Industry Credential data:
+  https://www.azed.gov/sites/default/files/2025/02/Industry-Credential-Attempt-and-Attainment-by-Program-and-Population.xlsx
+
+
+=====================================================================
+TECHNICAL REPORTS (PDFs - useful for understanding the data)
+=====================================================================
+
+AASA 2024 Technical Report:
+  https://www.azed.gov/sites/default/files/2025/01/AASA_2024_Technical_Report.pdf
+
+AASA 2023 Technical Report:
+  https://www.azed.gov/sites/default/files/2024/07/AASA_2023_Technical_Report.pdf
+
+AASA 2022 Technical Report:
+  https://www.azed.gov/sites/default/files/2023/09/AASA_2022_Technical_Report.pdf
+
+AASA Cut Scores:
+  https://www.azed.gov/sites/default/files/2021/12/AASA%20Cut%20Scores.pdf
+
+AASA Reporting Guide:
+  https://www.azed.gov/sites/default/files/2023/04/AASA%20Reporting%20Guide.pdf
+
+2023-2024 A-F Business Rules:
+  https://www.azed.gov/sites/default/files/2024/08/A-F%20Business%20Rules%202023-2024%20Omnibus%202024-08-22.pdf
+
+Accountability Data Guide:
+  https://www.azed.gov/sites/default/files/2022/04/Accountability%20Data%20Guide%20FY%2023.pdf
+
+2022-2023 Assessment Results Presentation:
+  https://www.azed.gov/sites/default/files/2024/01/ADE%20Assessments%20Results%20SEAP%20January%202024.pdf
+
+
+=====================================================================
+DOWNLOAD INSTRUCTIONS
+=====================================================================
+
+OPTION A: Browser Download (Recommended)
+  1. Open https://www.azed.gov/accountability-research/data in a browser
+  2. Download each "Assessments 20XX" xlsx link (2021-2025)
+  3. Open https://www.azed.gov/accountability-research/state-assessment-results
+  4. Download each AzMERIT xlsx link (2015-2019)
+  5. Save all files to this directory
+
+OPTION B: Automated Download
+  Run either:
+    bash download_assessment_data.sh
+    python3 download_assessment_data.py
+
+  Note: These scripts try many URL patterns since the exact file paths
+  are not publicly indexed. Some may fail - manual browser download
+  is more reliable.
+
+OPTION C: Ed-Fi API (Advanced)
+  ADE has an Ed-Fi ODS/API at:
+    https://sandbox-rest-ui-r9.azeds.azed.gov/swagger/index.html
+  This may provide programmatic access to assessment data, but likely
+  requires authorization credentials from ADE.
